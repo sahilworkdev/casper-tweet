@@ -70,27 +70,46 @@ const TweetGenerationSection = () => {
       }
     }, 5000);
 
-    const formData = new FormData();
-    formData.append("tweet_prompt", thought);
-    formData.append("art_style", artStyle);
-
-    if (photoOption === "generate") {
-      formData.append("character_description", generatedPrompt);
-    } else if (photoOption === "upload" && uploadedFile) {
-      formData.append("character_description", "");
-      formData.append("character_image", uploadedFile);
-    } else {
-      formData.append("character_description", "");
-    }
-
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/create-content`,
-        {
-          method: "POST",
-          body: formData,
+      let response;
+
+      if (photoOption === "none") {
+        const requestBody = {
+          user_input: thought,
+          create_image: true,
+          art_style: artStyle,
+        };
+
+        response = await fetch(
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/gorbagana-meme`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(requestBody),
+          }
+        );
+      } else {
+        const formData = new FormData();
+        formData.append("tweet_prompt", thought);
+        formData.append("art_style", artStyle);
+
+        if (photoOption === "generate") {
+          formData.append("character_description", generatedPrompt);
+        } else if (photoOption === "upload" && uploadedFile) {
+          formData.append("character_description", "");
+          formData.append("character_image", uploadedFile);
         }
-      );
+
+        response = await fetch(
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/create-content`,
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
+      }
 
       if (!response.ok) throw new Error("Failed to generate tweet content");
 
@@ -195,7 +214,7 @@ const TweetGenerationSection = () => {
           {loadingSteps.map((step, idx) => (
             <div
               key={idx}
-              className="flex items-center max-w-md mx-auto gap-2 p-3 rounded-md bg-gray-100 text-sm text-gray-700 shadow-sm border border-gray-200 animate-fade-in"
+              className="flex items-center min-w-sm max-w-md mx-auto gap-2 p-3 rounded-md bg-gray-100 text-sm text-gray-700 shadow-sm border border-gray-200 animate-fade-in"
             >
               <svg
                 className="w-4 h-4 text-blue-500 animate-spin"
@@ -252,7 +271,7 @@ const TweetGenerationSection = () => {
               <img
                 src={apiResult.cloudinary_url}
                 alt="Generated Character"
-                className="w-full rounded-lg border border-gray-200 object-cover"
+                className="w-full rounded-lg border border-gray-200 object-cover "
               />
             </div>
           )}
