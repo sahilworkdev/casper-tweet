@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import type React from "react";
 
 import { useState } from "react";
@@ -69,7 +68,7 @@ const TweetGenerationSection = () => {
       if (stepIndex < steps.length) {
         setLoadingSteps((prev) => [...prev, steps[stepIndex]]);
       }
-    }, 2000);
+    }, 5000);
 
     const formData = new FormData();
     formData.append("tweet_prompt", thought);
@@ -196,7 +195,7 @@ const TweetGenerationSection = () => {
           {loadingSteps.map((step, idx) => (
             <div
               key={idx}
-              className="flex items-center gap-2 p-3 rounded-md bg-gray-100 text-sm text-gray-700 shadow-sm border border-gray-200 animate-fade-in"
+              className="flex items-center max-w-md mx-auto gap-2 p-3 rounded-md bg-gray-100 text-sm text-gray-700 shadow-sm border border-gray-200 animate-fade-in"
             >
               <svg
                 className="w-4 h-4 text-blue-500 animate-spin"
@@ -294,7 +293,7 @@ const TweetGenerationSection = () => {
                 htmlFor="thought"
                 className="block text-sm font-medium text-gray-700 mb-2"
               >
-                What's on your mind?
+                What&apos;s on your mind?
               </label>
               <textarea
                 id="thought"

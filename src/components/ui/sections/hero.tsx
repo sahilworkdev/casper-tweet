@@ -1,4 +1,4 @@
-import TweetGenerationSection from "@/components/tweetGenerationSection";
+
 import React from "react";
 
 const HeroSection = () => {
