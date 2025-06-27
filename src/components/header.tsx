@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const Header = () => {
@@ -13,31 +14,31 @@ const Header = () => {
             <div className="bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] w-8 h-8 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">C</span>
             </div>
-            <span className="ml-2 text-xl font-bold text-gray-900">
+            <Link href="/" className="ml-2 text-xl font-bold text-gray-900">
               CasperAI
-            </span>
+            </Link>
           </div>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
-            <a
+            <Link
               href="/tweet"
               className="text-gray-700 hover:text-gray-900 hover:font-bold hover:underline font-medium transition-colors"
             >
               Tweet
-            </a>
-            <a
-              href="#pricing"
+            </Link>
+            <Link
+              href="#"
               className="text-gray-700 hover:text-gray-900 hover:font-bold hover:underline font-medium transition-colors"
             >
               Meme
-            </a>
-            <a
-              href="#about"
+            </Link>
+            <Link
+              href="#a"
               className="text-gray-700 hover:text-gray-900 hover:font-bold hover:underline font-medium transition-colors"
             >
               Character
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle Button */}
@@ -75,27 +76,27 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 flex flex-col space-y-4">
-            <a
+            <Link
               href="/tweet"
               className="text-gray-700 hover:text-gray-900 font-medium transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Tweet
-            </a>
-            <a
+            </Link>
+            <Link
               href="#pricing"
               className="text-gray-700 hover:text-gray-900 font-medium transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Meme
-            </a>
-            <a
+            </Link>
+            <Link
               href="#about"
               className="text-gray-700 hover:text-gray-900 font-medium transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Character
-            </a>
+            </Link>
           </div>
         )}
       </div>
