@@ -4,7 +4,7 @@ import React from "react";
 const HeroSection = () => {
   return (
     <div className="overflow-x-hidden flex justify-center items-center min-h-screen bg-gradient-to-br from-[#E0F7FA] via-[#FCE4EC] to-[#F3E5F5] pb-10">
-      <section className="pt-12 sm:pt-16">
+      <section className="pt-16">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <h1 className="px-6 text-lg text-gray-700 font-inter">
@@ -21,7 +21,7 @@ const HeroSection = () => {
           </div>
 
           {/* Feature Cards */}
-          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 sm:mt-16 grid gap-4 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {/* Card 1: Viral Tweets */}
             <div className="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-lg transition">
               <h3 className="text-xl font-semibold text-gray-900">

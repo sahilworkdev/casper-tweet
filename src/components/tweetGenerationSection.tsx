@@ -210,11 +210,11 @@ const TweetGenerationSection = () => {
   return (
     <div className="w-full">
       {isGenerating && !apiResult && (
-        <div className="flex flex-col gap-2 mt-4">
+        <div className="flex flex-col gap-2 ">
           {loadingSteps.map((step, idx) => (
             <div
               key={idx}
-              className="flex items-center min-w-sm max-w-md mx-auto gap-2 p-3 rounded-md bg-gray-100 text-sm text-gray-700 shadow-sm border border-gray-200 animate-fade-in"
+              className="flex items-center min-w-[300px] max-w-md mx-auto gap-2 p-3 rounded-md bg-gray-100 text-sm text-gray-700 shadow-sm border border-gray-200 animate-fade-in"
             >
               <svg
                 className="w-4 h-4 text-blue-500 animate-spin"
@@ -242,7 +242,7 @@ const TweetGenerationSection = () => {
       )}
 
       {!isGenerating && apiResult && (
-        <div className="bg-white rounded-2xl shadow-xl p-6 max-w-xl mx-auto">
+        <div className="bg-white rounded-2xl shadow-xl p-6 max-w-xl mx-auto  overflow-hidden">
           <div className="flex items-start gap-4 mb-4">
             {/* Profile Picture */}
             <img
@@ -271,7 +271,7 @@ const TweetGenerationSection = () => {
               <img
                 src={apiResult.cloudinary_url}
                 alt="Generated Character"
-                className="w-full rounded-lg border border-gray-200 object-cover "
+                className="w-full h-[300px] rounded-lg border border-gray-200 object-contain "
               />
             </div>
           )}
@@ -296,7 +296,7 @@ const TweetGenerationSection = () => {
       {!isGenerating && !apiResult && (
         <div className=" bg-white rounded-2xl shadow-xl p-8  w-full">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-xl sm:text-3xl font-bold text-gray-900 mb-2 sm:mb-4">
               Generate Your Viral Tweet
             </h2>
             <p className="text-gray-600">
