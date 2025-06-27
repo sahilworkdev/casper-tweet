@@ -4,7 +4,7 @@ import React from "react";
 const HeroSection = () => {
   return (
     <div className="overflow-x-hidden flex justify-center items-center min-h-screen bg-gradient-to-br from-[#E0F7FA] via-[#FCE4EC] to-[#F3E5F5] pb-10">
-      <section className="pt-16">
+      <section className="pt-16 mt-12 sm:mt-0">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <h1 className="px-6 text-lg text-gray-700 font-inter">

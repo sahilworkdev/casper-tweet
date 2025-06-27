@@ -393,7 +393,7 @@ const TweetGenerationSection = () => {
                         </svg>
                       </div>
                       <h3 className="font-medium text-gray-900">No Photo</h3>
-                      <p className="text-sm text-gray-500">Text only tweet</p>
+                      <p className="text-sm text-gray-500">Tweet with an image of Gorbagana character</p>
                     </div>
                   </div>
                 </label>
