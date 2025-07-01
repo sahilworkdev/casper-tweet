@@ -1,4 +1,4 @@
-import { TweetFormsSection } from "@/components/forms";
+import { TweetFormsSection } from "@/components/tweetForms/forms";
 import TweetGenerationSection from "@/components/tweetGenerationSection";
 import React from "react";
 

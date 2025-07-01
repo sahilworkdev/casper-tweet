@@ -12,9 +12,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { MessageSquare, Upload, Sparkles } from "lucide-react";
-import { TextTweetForm } from "./tweetForms/TextTweetForm";
-import { UploadTweetForm } from "./tweetForms/UploadTweetForm";
-import { AiCharacterTweetForm } from "./tweetForms/AiCharacterTweetForm";
+import { TextTweetForm } from "./TextTweetForm";
+import { UploadTweetForm } from "./UploadTweetForm";
+import { AiCharacterTweetForm } from "./AiCharacterTweetForm";
 import {
   generateAiCharacterTweet,
   generateTextTweet,
@@ -171,7 +171,6 @@ export function TweetFormsSection() {
               onSubmit={() => handleSubmit("ai")}
               loading={aiLoading}
               error={aiError}
-
               result={aiResult}
             />
           </TabsContent>
